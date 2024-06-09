@@ -1,10 +1,10 @@
 "use client";
+
 import axios from "axios";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
-import { Button } from "../ui/button";
 
 import {
   Dialog,
@@ -14,8 +14,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-
-import { Input } from "@/components/ui/input";
 import {
   Form,
   FormControl,
@@ -24,15 +22,17 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { FileUpload } from "@/components/file-upload";
 import { useRouter } from "next/navigation";
-import { FileUpload } from "../file-upload";
 
 const formSchema = z.object({
   name: z.string().min(1, {
-    message: "Server name is required",
+    message: "Server name is required.",
   }),
   imageUrl: z.string().min(1, {
-    message: "Server image is required",
+    message: "Server image is required.",
   }),
 });
 
@@ -58,6 +58,7 @@ export const InitialModal = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await axios.post("/api/servers", values);
+
       form.reset();
       router.refresh();
       window.location.reload();
@@ -65,18 +66,20 @@ export const InitialModal = () => {
       console.log(error);
     }
   };
+
   if (!isMounted) {
     return null;
   }
+
   return (
     <Dialog open>
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">
-            Customize your Middle-earth
+            Customize your server
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
-            Give your realm a personality with a name and an image. You can
+            Give your server a personality with a name and an image. You can
             always change it later.
           </DialogDescription>
         </DialogHeader>
@@ -107,13 +110,13 @@ export const InitialModal = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
-                      Realm name
+                      Server name
                     </FormLabel>
                     <FormControl>
                       <Input
                         disabled={isLoading}
                         className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                        placeholder="Enter realm name"
+                        placeholder="Enter server name"
                         {...field}
                       />
                     </FormControl>
