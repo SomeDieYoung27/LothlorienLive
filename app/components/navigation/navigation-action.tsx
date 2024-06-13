@@ -1,14 +1,14 @@
 "use client";
 
 import { GiSwordman } from "react-icons/gi";
-import { ActionToolTip } from "../action-tooltip";
+import { ActionTooltip } from "../action-tooltip";
 import { useModal } from "@/hooks/use-modal-store";
 
 export const NavigationAction = () => {
   const { onOpen } = useModal();
   return (
     <div>
-      <ActionToolTip side="right" align="center" label="Add a server">
+      <ActionTooltip side="right" align="center" label="Add a server">
         <button
           onClick={() => onOpen("createServer")}
           className="group flex items-center"
@@ -20,7 +20,7 @@ export const NavigationAction = () => {
             />
           </div>
         </button>
-      </ActionToolTip>
+      </ActionTooltip>
     </div>
   );
 };
