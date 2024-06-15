@@ -8,6 +8,7 @@ import { MembersModal } from "../modals/members-modal";
 import { CreateChannelModal } from "../modals/create-channel-modal";
 import { EditChannelModal } from "../modals/edit- channel-modal";
 import { DeleteChannelModel } from "../modals/delete-channel-modal";
+import { MessageFileModal } from "../modals/message-file-modal";
 
 export const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -27,6 +28,7 @@ export const ModalProvider = () => {
       <CreateChannelModal />
       <EditChannelModal />
       <DeleteChannelModel />
+      <MessageFileModal />
     </>
   );
 };
