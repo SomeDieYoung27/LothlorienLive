@@ -1,4 +1,5 @@
 import { ChatHeader } from "@/app/components/chat/chat-header";
+import { ChatInput } from "@/app/components/chat/chat-input";
 import { getOrCreateConversation } from "@/lib/conversation";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
