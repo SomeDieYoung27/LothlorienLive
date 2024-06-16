@@ -1,4 +1,5 @@
 "use client";
+
 import { Smile } from "lucide-react";
 import Picker from "@emoji-mart/react";
 import data from "@emoji-mart/data";
