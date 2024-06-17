@@ -29,6 +29,7 @@ export const ModalProvider = () => {
       <EditChannelModal />
       <DeleteChannelModel />
       <MessageFileModal />
+      <DeleteChannelModel />
     </>
   );
 };
