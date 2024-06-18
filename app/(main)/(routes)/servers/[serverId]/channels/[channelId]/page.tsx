@@ -1,6 +1,7 @@
 import { ChatHeader } from "@/app/components/chat/chat-header";
 import { ChatInput } from "@/app/components/chat/chat-input";
 import { ChatMessages } from "@/app/components/chat/chat-messages";
+import Header from "@/components/header";
 import { MediaRoom } from "@/components/media-room";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
@@ -40,6 +41,7 @@ const ChannelIdPage = async ({ params }: ChannelIdProps) => {
 
   return (
     <div className="bg-white dark:bg-[#313338] flex flex-col h-full">
+      <Header />
       <ChatHeader
         name={channel.name}
         serverId={channel.serverId}

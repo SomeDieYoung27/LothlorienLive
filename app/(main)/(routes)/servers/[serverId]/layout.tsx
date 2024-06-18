@@ -1,4 +1,7 @@
 import { ServerSidebar } from "@/app/components/server/server-sidebar";
+import Header from "@/components/header";
+import HeaderSidebar from "@/components/header-sidebar";
+import { Separator } from "@/components/ui/separator";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
@@ -32,6 +35,7 @@ const ServerIdLayout = async ({
   return (
     <div className="h-full">
       <div className="hidden md:flex h-full w-60 z-20 flex-col fixed inset-y-0">
+        <HeaderSidebar />
         <ServerSidebar serverId={params.serverId} />
       </div>
       <main className="h-full md:pl-60">{children}</main>
