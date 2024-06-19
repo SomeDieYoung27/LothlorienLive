@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ModalProvider } from "@/components/providers/modal-provider";
 import { SocketProvider } from "@/components/providers/socket-provider";
 import { QueryProvider } from "@/components/providers/query-provider";
-import Header from "@/components/header";
+import { ApiContextProvider } from "./context/api.context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,8 +31,10 @@ export default function RootLayout({
             storageKey="echohub-theme"
           >
             <SocketProvider>
-              <ModalProvider />
-              <QueryProvider>{children}</QueryProvider>
+              <ApiContextProvider>
+                <ModalProvider />
+                <QueryProvider>{children}</QueryProvider>
+              </ApiContextProvider>
             </SocketProvider>
           </ThemeProvider>
         </body>

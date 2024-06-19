@@ -1,5 +1,5 @@
 import { ServerSidebar } from "@/app/components/server/server-sidebar";
-import Header from "@/components/header";
+import Header from "@/app/search/components/Search/header";
 import HeaderSidebar from "@/components/header-sidebar";
 import { Separator } from "@/components/ui/separator";
 import { currentProfile } from "@/lib/current-profile";

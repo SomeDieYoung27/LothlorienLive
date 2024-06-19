@@ -1,7 +1,7 @@
 import { ChatHeader } from "@/app/components/chat/chat-header";
 import { ChatInput } from "@/app/components/chat/chat-input";
 import { ChatMessages } from "@/app/components/chat/chat-messages";
-import Header from "@/components/header";
+import Header from "@/app/search/components/Search/header";
 import { MediaRoom } from "@/components/media-room";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
