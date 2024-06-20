@@ -13,3 +13,5 @@ pnpm dev
 bun dev
 ```
 LothLorienLive is dedicated to my love for Lord of the Rings
+
+The One API to rule them all
